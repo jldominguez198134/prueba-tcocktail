@@ -1,0 +1,34 @@
+//- Variables
+include ../_variables
+
+//- Recursos
+include ../sources/_lipsum
+
+//- Página actual
+block page
+	- var page = page_class.tab1 // Por defecto
+
+//- Estructura HTML
+doctype html
+html(class='#{page}' lang=lang).no-js.loading
+	head
+		include ../layout/_head
+
+	body
+		//- Browser Upgrade
+		include ../partials/_ifltie8
+
+		//- Cabecera
+		header
+			include ../layout/_header
+
+		//- Contenido principal
+		main
+			block content
+
+		//- Pie de página
+			footer
+				include ../layout/_footer
+
+		//- Carga de ficheros en footer
+		include ../layout/_footer_files

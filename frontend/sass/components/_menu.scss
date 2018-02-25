@@ -1,0 +1,155 @@
+// Disposición general del menú
+.header{
+	.menu-main{
+
+		// Opciones de menú
+		> *{
+			border-color: transparent;
+			text-align: right;
+		}
+
+		.menu-options {
+			> * {
+				text-transform: uppercase;
+
+				button {
+					font-family: $roboto-slab;
+					color: $color-main-sub;
+					-webkit-transition: color .3s;
+					-moz-transition: color .3s;
+					-ms-transition: color .3s;
+					-o-transition: color .3s;
+					transition: color .3s;
+					min-width: 120px;
+
+					&:hover {
+						color: $color-main;
+					}
+				}
+			}
+		}
+
+		// BP | > Break Menú Móvil
+
+			@include responsive('min-#{$break-menu-mobile}'){
+			.menu-options > *{
+				border-bottom: 4px solid transparent;
+				@include inline-block;
+				padding: .65em 1em !important;
+			}
+
+			// Título del menú
+			.menu-title{
+				display: none;
+			}
+		}
+
+		// BP | < Break Menú Móvil
+		@include responsive('max-#{$break-menu-mobile}'){
+			.menu-title,
+			.menu-options > *{			
+				border-bottom: 1px solid $color-grey-light !important;
+			}
+
+			.menu-options > *{
+				border-left: 6px solid transparent;
+				button{
+					display: block;
+					@include text('title');
+					padding: 1em;
+					&:hover{
+						color: inherit;
+						background-color: $color-grey-light;
+					}
+				}
+			}
+
+			// Título del menú
+			.menu-title h2{
+				@include text('title');
+				padding: 1.4em 1em;
+				margin: 0;
+
+				// BP | Destop - Tablet
+				@include responsive('desktop-tablet'){
+					padding-bottom: 1.17em; 
+					padding-top: 1.17em; 
+				}
+
+				// BP | Móvil
+				@include responsive('max-phone'){
+					padding-bottom: 1.75em; 
+					padding-top: 1.75em; 
+				}
+			}
+		}
+	}
+}
+
+// Resaltar opción activa de menú
+@each $page in $pages{
+	html.#{$page}{
+		.menu .#{$page}{
+			border-color: $color-main;
+			button{
+				color: $color-main;
+				pointer-events: none;
+				// Sólo para menú hamburguesa
+				@include responsive('max-#{$break-menu-mobile}'){
+					background-color: $color-grey-lightest;
+				}
+			}
+		}
+	}
+}
+
+// Menú Hamburguesa
+.header{
+
+	// Menú principal
+	.menu-main{
+		@include responsive('max-#{$break-menu-mobile}'){
+			background-color: $color-grey-lighter;
+			@include fullscreen;
+			left: 100%;
+			transition: left $transition-style;
+			margin-top: 0;
+			text-align: left;
+			width: 86%;
+			margin-left: $size-burguer;
+			z-index: z('modal', 'base');
+		}
+	}
+
+	// Botón de menú hamburguesa
+	.burguer{
+
+		// Botón
+		button{
+			background-color: transparent;
+			font-size: 2.5rem;
+			height: 100%;
+			min-height: $size-burguer;
+			width: $size-burguer;
+			position: relative;
+			z-index: z('modal', 'button');
+
+			// BP | Móvil
+			@include responsive('max-phone'){
+				font-size: 2rem;
+				width: $size-burguer-mobile;
+			}
+		}
+
+
+		// Ocultar hasta breakpoint
+		@include responsive('min-#{$break-menu-mobile}'){
+			display: none;
+		}
+	}
+}
+
+// Posicionar menú al abrir menú
+html.menu-open .menu-main{
+	left: 0;
+}

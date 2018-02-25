@@ -1,0 +1,104 @@
+// Contenedor
+.container{
+	@extend %center-h;
+	@include box-sizing(border-box);
+	max-width: 1300px;
+	width: 100%;
+
+	// Margen
+	$mar: $gap;
+	margin-bottom: $mar;
+	margin-top: $mar;
+
+	// BP | > Desktop
+	@include responsive('max-desktop'){
+		$pad: $gap;
+		padding-left: $pad;
+		padding-right: $pad;
+	}
+
+	&.xs {
+		max-width: 95%;
+	}
+}
+
+// Envoltorios
+.wrapper{
+	@extend %center-h;
+	max-width: 715px;
+
+	&.sm{
+		max-width: 600px;
+	}
+	&.lg{
+		max-width: 860px;
+	}
+	&.xl{
+		max-width: 900px;
+	}
+}
+
+// Separadores
+.sep{
+	$gap: 1rem;
+	margin-bottom: $gap;
+	margin-top: $gap;
+
+	&.sm{
+		margin-bottom: $gap / 2;
+		margin-top: $gap / 2;		
+	}
+	&.lg{
+		margin-bottom: $gap * 2;
+		margin-top: $gap * 2;		
+	}
+	&.xl{
+		margin-bottom: $gap * 4.5;
+		margin-top: $gap * 3.5;
+	}
+	&.xxl{
+		margin-bottom: $gap * 6;
+		margin-top: $gap * 6;		
+	}
+}
+
+// Cajas
+.box{
+	padding: $gap-slider;
+
+	// Tablet
+	@include responsive('max-tablet'){
+		padding: $gap-slider-s;
+	}
+
+	// Phablet
+	@include responsive('max-phablet'){
+		padding: $gap-slider-xs;
+	}
+
+	// Caja con fondo gris
+	&.box-grey{
+		background-color: $color-grey-lighter;
+	}
+
+	// Pequeño
+	&.sm{
+		padding: $gap-slider-s;
+
+		// Tablet
+		@include responsive('max-tablet'){
+			padding: $gap-slider-xs;
+		}
+
+		// Phablet
+		@include responsive('max-phablet'){
+			padding: $gap-slider-xxs;
+		}
+	}
+
+	// Grande
+	&.lg{
+		$gap: 5em;
+		padding: $gap;
+	}
+}

@@ -1,0 +1,8 @@
+// Imágenes de bloque 'Contenido e imagen'
+.content-and-image{
+
+	// Instagram
+	&.instagram::after{
+		background-image: url('#{$img}/instagram_image.jpg#{$ver}');
+	}
+}

@@ -1,0 +1,55 @@
+# phpstorm project files
+.idea
+
+# dreamweaver
+_notes
+
+# zend studio for eclipse project files
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+
+# composer vendor dir
+/app/vendor
+
+# composer itself is not needed
+composer.phar
+
+# Mac DS_Store Files
+.DS_Store
+
+# phpunit itself is not needed
+phpunit.phar
+# local phpunit config
+/phpunit.xml
+
+## Directory-based project format:
+
+## File-based project format:
+*.ipr
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+/out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+## sass
+.sass-cache
+*.scssc
+*.sassc
+
+# Node JS
+node_modules/
+
+# Bower
+bower_components/
+
+# Photoshop
+*.psd

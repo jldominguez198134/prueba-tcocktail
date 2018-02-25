@@ -1,0 +1,15 @@
+// Posicionamiento de elementos principales de página
+body{
+	header,
+	main,
+	footer{
+		position: relative;
+	}
+	> header{
+		z-index: z('default', 'menu');
+	}
+	> main,
+	> footer{
+		z-index: z('default', 'base');
+	}
+}

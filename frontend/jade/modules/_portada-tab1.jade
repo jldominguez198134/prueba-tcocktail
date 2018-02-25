@@ -1,0 +1,31 @@
+.container.module.m-portada-tab1
+    .container.xs
+        h2 HOTEL
+            span  Mieres del Camín Apartamentos
+            span.stars
+                i.fa.fa-star
+                i.fa.fa-star
+                i.fa.fa-star
+                i.fa.fa-star
+
+        .flex-container
+            each mod, i in tab1
+                .flex-item(class="regimen-#{i} #{mod.default}")
+                    .regimen-title
+                        h3 #{mod.title}
+
+                    .regimen-options
+                        ul
+                            each opt in mod.options
+                                li
+                                    p #{opt}
+
+                    .regimen-button(class="#{mod.default}")
+                        .radio
+                        .label
+                            label(for="#{mod.label}") #{mod.button}
+
+
+
+
+

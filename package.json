@@ -1,0 +1,39 @@
+{
+  "name": "prueba-the-cocktail",
+  "version": "1.0.0",
+  "description": "Prueba The Cocktail",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jldominguez198134/prueba-tc.git"
+  },
+  "author": "jldominguez",
+  "license": "ISC",
+  "homepage": "",
+  "devDependencies": {
+    "apache-server-configs": "^2.14.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.11",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^4.1.0",
+    "gulp-data": "^1.2.1",
+    "gulp-gulp": "0.0.5",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-jade": "^1.1.0",
+    "gulp-json-sass": "0.0.2",
+    "gulp-notify": "^2.2.0",
+    "gulp-open": "^2.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-prettify": "^0.4.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^1.5.4",
+    "gulp-watch": "^4.3.8",
+    "require-dir": "^0.3.0"
+  }
+}

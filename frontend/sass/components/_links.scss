@@ -1,0 +1,16 @@
+// Enlaces
+a{
+	color: $color-dark;
+	transition: $transition;
+	&:hover{
+		color: $color-main;
+		.btn-slider-left,
+		.btn-slider-right {
+			color: $color-dark;
+		}
+	}
+}
+
+.legales-modal {
+	cursor: pointer;
+}

@@ -1,0 +1,216 @@
+// Botón | Clase
+.btn{
+	background-color: $color-main;
+	border: 0;
+	@include box-sizing(border-box);
+	display: inline-block;
+	padding: 0.5em;
+	position: relative;
+	text-align: center;
+	transition: $transition-color;
+	&:hover{
+		background-color: $color-main-light;
+		color: $color-dark;
+	}
+
+	// Arrow y not arrow
+	&.arrow,
+	&.not-arrow{
+		font-weight: bold;
+		padding: 0.75em 2em;
+		min-width: 12em;
+		text-transform: uppercase;
+	}
+
+	// Arrow
+	&.arrow{
+		&::after{
+			$size: 0.45em;
+			$weight: 3px;
+			$color: $color-dark;
+			@include border-radius($weight);
+			border-top: $weight solid $color;
+			border-right: $weight solid $color;
+			content: '';
+			display: block;
+			height: $size;
+			position: absolute;
+			@include rotate(45);
+			top: 1em;
+			right: 1.4em;
+			width: $size;
+		}
+	}
+
+	&.xl {
+		padding: 1em 0.5em;
+	}
+
+	// Botón desabilitado
+	&.disabled{
+		background-color: $color-grey-light;
+		color: $color-grey-dark;
+		cursor: auto;
+	}
+
+	// Botón Gris
+	&.grey{
+		background-color: $color-grey;
+		color: $color-dark;
+		&:hover{
+			background-color: $color-grey-light;
+		}
+
+		// Arrow
+		/*&.arrow::after{
+			border-color: $color-light;
+		}*/
+	}
+
+	// Color | Negro
+	&.black{
+		$color: $color-light;
+		background-color: $color-dark;
+		color: $color;
+		&:hover{
+			background-color: $color-dark-light;
+		}
+
+		// Arrow
+		&.arrow::after{
+			border-color: $color;
+		}
+	}
+
+	// Color | Negro
+	&.white{
+		background-color: $color-light;
+		&:hover{
+			background-color: $color-grey-lighter;
+		}
+	}
+
+	// Color | verde
+	&.green{
+		background-color: $color-green;
+		color: $color-light;
+		&:hover{
+			background-color: $color-green-lighter;
+		}
+	}
+
+	&.transparent {
+		background: none;
+
+	}
+
+	// Color | Negro
+	&.disabled{
+		$color: $color-grey-dark;
+		$bg: $color-grey-light;
+		background-color: $bg;
+		color: $color;
+		cursor: default;
+		&:hover{
+			background-color: $bg;
+		}
+
+		// Arrow
+		&.arrow::after{
+			border-color: $color;
+		}
+	}
+
+	&.disabled-black{
+		background-color: $color-dark;
+		color: $color-light;
+		cursor: auto;
+	}
+
+	&.btn-slider-left {
+		position: absolute;
+		bottom: 5%;
+		left: 5%;
+		@include responsive('max-phablet') {
+			min-width: 10em;
+			bottom: 9%;
+		}
+	}
+
+	&.btn-slider-right {
+		position: absolute;
+		bottom: 5%;
+		right: 5%;
+		@include responsive('max-phablet') {
+			min-width: 10em;
+			bottom: 9%;
+		}
+	}
+}
+
+div.btn {
+	&.arrow.btn-slider-left,
+	&.arrow.btn-slider-right {
+		&::after {
+			top: 1.3em;
+			@include responsive('max-phablet') {
+				right: .8em;
+			}
+		}
+	}
+}
+
+// Botón | Etiqueta
+button{
+
+	// Tipo | Vídeo modal
+	&.video-modal.player{
+		position: relative;
+
+		// Icono
+		&::after{
+			background: url('#{$img}/icon-play.svg') no-repeat center;
+			background-size: 10%;
+			content: '';
+			height: 100%;
+			left: 0;
+			position: absolute;
+			transition: opacity $transition-style;
+			top: 0;
+			width: 100%;
+		}
+
+		// Not rollover
+		&:not(:hover)::after{
+			opacity: 0.75;
+		}
+	}
+}
+
+// Tipo | Vídeo modal
+.video-modal.player{
+	position: relative;
+
+	.imgcat {
+		position: relative;
+		cursor: pointer;
+
+		// Icono
+		&::after {
+			background: url('#{$img}/icon-play.svg') no-repeat center;
+			background-size: 20%;
+			content: '';
+			height: 100%;
+			left: 0;
+			position: absolute;
+			transition: opacity $transition-style;
+			top: 0;
+			width: 100%;
+		}
+
+		// Not rollover
+		&:not(:hover)::after {
+			opacity: 0.75;
+		}
+	}
+}

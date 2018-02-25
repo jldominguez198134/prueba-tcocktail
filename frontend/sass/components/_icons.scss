@@ -1,0 +1,12 @@
+// Iconos
+figure{
+
+	$icons: 'instagram', 'arroba', 'instagram-white', 'megane', 'captur', 'kadjar';
+
+	// Asignación de Iconos
+	@each $icon in $icons{
+		&.#{$icon}{
+			background-image: url('#{$img}/icon-#{$icon}.png#{$ver}');
+		}
+	}
+}

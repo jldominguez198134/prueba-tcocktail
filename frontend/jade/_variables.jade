@@ -1,0 +1,121 @@
+//- Versión
+- var version = 1.4
+
+//- Fecha Actual
+- var fechaAct = new Date()
+
+//- Metas
+- var lang = 'es'
+- var title = 'Prueba The Cocktail | José Luis Domínguez'
+- var desc = 'Prueba para proceso de selección The Cocktail'
+- var keywords = ''
+- var author = 'José Luis Domínguez'
+- var pathJs = 'js/min/scripts.min.js'
+- var pathCSS = 'css/min/styles.min.css'
+- var bufferCSS = 'css/min/buffer.min.css'
+- var favicon = 'favicon.ico'
+- var appleFavicon = 'apple-touch-icon.png'
+
+//- Rutas
+- var img = 'images'
+
+//- Librerías
+- var jquery = 'https://code.jquery.com/jquery-3.1.1.min.js'
+- var fontAwesome = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'
+- var tweenMax = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js'
+- var timelineMax = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TimelineMax.min.js'
+- var swiperCSS = 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/css/swiper.min.css'
+- var swiperJS = 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/js/swiper.min.js'
+
+//- Páginas | Texto de opción de menú
+- var page_txt = {tab1: 'Tab 1', tab2: 'Tab 2'}
+
+//- Páginas | Clases de páginas
+- var page_class = {tab1: 'tab1', tab2: 'tab2'}
+
+
+//- Menú | Opciones de menú principal
+- var menu = []
+- menu.push({text: page_txt.tab1, class: page_class.tab1})
+- menu.push({text: page_txt.tab2, class: page_class.tab2})
+
+
+//- TAB 1
+
+//- Titulos de los módulos
+-
+    var tab1_title = {
+        mod1: 'Solo Alojamiento',
+        mod2: 'Alojamiento y Desayuno',
+        mod3: 'Media Pensión',
+        mod4: 'Todo incluido',
+        mod5: 'Unlimited Services'
+    }
+//- Opciones de los módulos
+-
+    var tab1_options = {
+        mod1: {
+            mod1_opt1: 'Sin Régimen',
+            mod1_opt2: 'Botella de agua de bienvenida'
+        },
+        mod2: {
+            mod2_opt1: 'Desayuno buffet completo'
+        },
+        mod3: {
+            mod3_opt1: 'Desayuno buffet completo',
+            mod3_opt2: 'Cena buffet',
+            mod3_opt3: 'No incluye'
+        },
+        mod4: {
+            mod4_opt1: 'Dispondrás de comida y bebida todo el día y durante toda tu estancia',
+            mod4_opt2: 'Restaurante buffet',
+            mod4_opt3: 'Snack Bar',
+            mod4_opt4: 'Servicio de bares (marcas nacionales)'
+        },
+        mod5: {
+            mod5_opt1: 'Restaurante buffet con bebidas premium',
+            mod5_opt2: 'Restaurante a la carta (una cena por estancia)',
+            mod5_opt3: 'Sanck Bar con bebidas premium',
+            mod5_opt4: 'Minibar incluido',
+            mod5_opt5: 'Acceso a SPA y 45 minutos de masaje por persona',
+            mod5_opt6: 'Actividades deportivas',
+            mod5_opt7: 'Caja fuerte',
+            mod5_opt8: 'Parking gratuito',
+            mod5_opt9: 'Lavandería'
+        }
+    }
+//- Botones de los módulos
+-
+    var tab1_buttons = {
+    mod1: 'Elegir régimen',
+    mod2: 'Elegir régimen',
+    mod3: 'Elegir régimen',
+    mod4: 'Elegir régimen',
+    mod5: 'Elegir régimen'
+    }
+//- Labels de los módulos
+-
+    var tab1_labels = {
+    mod1: 'alojamiento',
+    mod2: 'alojamiento-desayuno',
+    mod3: 'media-pension',
+    mod4: 'todo-incluido',
+    mod5: 'unlimited'
+    }
+//- Labels de los módulos
+-
+    var tab1_default = {
+    mod1: 'select',
+    mod2: 'no-select',
+    mod3: 'no-select',
+    mod4: 'no-select',
+    mod5: 'no-select'
+    }
+
+- var tab1 = []
+- tab1.push({title: tab1_title.mod1, options: tab1_options.mod1, button: tab1_buttons.mod1, label: tab1_labels.mod1, default: tab1_default.mod1})
+- tab1.push({title: tab1_title.mod2, options: tab1_options.mod2, button: tab1_buttons.mod2, label: tab1_labels.mod2, default: tab1_default.mod2})
+- tab1.push({title: tab1_title.mod3, options: tab1_options.mod3, button: tab1_buttons.mod3, label: tab1_labels.mod3, default: tab1_default.mod3})
+- tab1.push({title: tab1_title.mod4, options: tab1_options.mod4, button: tab1_buttons.mod4, label: tab1_labels.mod4, default: tab1_default.mod4})
+- tab1.push({title: tab1_title.mod5, options: tab1_options.mod5, button: tab1_buttons.mod5, label: tab1_labels.mod5, default: tab1_default.mod5})
+

@@ -1,0 +1,115 @@
+// Aplicable a cualquier grid
+@mixin grid-1{
+
+	// Disposición en 1 columna
+	@include responsive('max-phablet'){
+
+		@include grid(1, 12);
+
+		// Clase para acotar ancho máximo
+		&.wrapped{
+			> *{
+				max-width: $grid-wrapped;
+			}
+		}
+	}
+
+	// Elementos alineados a la izquierda
+	&.left{
+		text-align: left;
+		> *{
+			text-align: center;
+		}
+	}
+
+	// Elementos alineados a la izquierda
+	&.right{
+		text-align: right;
+		> *{
+			text-align: center;
+		}
+	}
+}
+
+// Grid 2 columnas
+.grid-2{
+	@include grid(2, 6);
+	@include grid-1;
+
+	// Clase para acotar ancho máximo
+	&.wrapped{
+		> *{
+			max-width: $grid-wrapped;
+		}
+	}
+}
+
+// Grid 3 columnas
+.grid-3{
+	@include grid(3, 3);
+	@include grid-1;
+	// Clase para acotar ancho máximo
+
+}
+
+// Grid 4 columnas
+.grid-4{
+	@include grid(4, 4);
+	@include grid-1;
+}
+
+// Disposición intermedia en 2 columna
+@mixin grid-2{
+	@include grid-1;
+
+	@include responsive('max-tablet'){
+		@include grid(2, 6);
+	}
+}
+
+// Grid 4 columnas -> 2 en tablet
+.grid-4-2{
+	@include grid(4, 6);
+	@include grid-2;
+	@include grid-1;
+}
+
+// Grid tipo iconos
+.grid-icons{
+	$size: 4rem;
+	
+	// Icono
+	figure{
+		display: inline-block;
+		background: center no-repeat;
+		background-size: contain;
+		height: $size;
+		width: $size;
+	}
+
+	// Iconos grandes
+	&.icons-lg figure{
+		height: $size * 1.5;
+		width: $size * 1.5;
+	}
+
+	// Iconos grandes
+	&.icons-xl figure{
+		height: $size * 1.75;
+		width: $size * 1.75;
+	}
+
+	h1,
+	h2,
+	h3{
+		margin-bottom: 0;
+		+ *{
+			margin-top: 0.5em;
+		}
+	}
+
+	// Margen extra para botón
+	.btn{
+		margin-top: 1.5em;
+	}
+}

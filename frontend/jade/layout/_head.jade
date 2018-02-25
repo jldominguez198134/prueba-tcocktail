@@ -1,0 +1,29 @@
+//- Metas y título
+meta(charset='utf-8')
+meta(http-equiv='x-ua-compatible' content='ie=edge')
+title=title
+meta(name='description' content=desc)
+meta(name='keywords' content=keywords)
+meta(name='author' content=author)
+meta(name='viewport' content='width=device-width, initial-scale=1')
+
+//- Compartir en redes sociales
+meta(property='og:image' content=social_sharing_image)
+meta(property='og:title' content=social_sharing_title)
+meta(property='og:description' content=social_sharing_desc)
+
+//- Favicon
+    link(rel='shortcut icon', href=favicon, async="true")
+
+//- Fontawesome
+link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css", rel="stylesheet")
+
+//- Tipografias
+link(href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,700", rel="stylesheet")
+
+//- Buffer
+link(rel='stylesheet', href=bufferCSS, async="true")
+
+
+//- CSS
+link(rel='stylesheet', href=pathCSS + '?v=#{version}', async="true")

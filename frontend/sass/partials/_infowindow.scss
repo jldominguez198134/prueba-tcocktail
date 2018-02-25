@@ -1,0 +1,13 @@
+//  Google Maps | Infowindow
+.infowindow{
+	text-align: left;
+	@include text('text');
+	.fa{
+		margin-right: 0.5em;
+		text-align: right;
+	}
+	h2,
+	.fa{
+		color: $color-main;
+	}
+}

@@ -1,0 +1,95 @@
+// Versión
+$version: 1.1;
+$ver: '?v=#{$version}';
+
+// Rutas
+$img: '../../images';
+
+// Clases de páginas
+$pages: 'tab1', 'tab2';
+
+// Breakpoints
+$break-desktop: 1200px;
+$break-tablet: 1050px;
+$break-boxes: 880px;
+$break-phablet: 768px;
+$break-midphablet: 620px;
+$break-miniphablet: 585px;
+$break-phone: 480px;
+$break-midphone: 405px;
+$break-miniphone: 320px;
+
+// Breakpoints | Específicos
+$break-menu-mobile: 'miniphablet';
+
+// Color | Principal
+$color-prueba: #003970;
+
+// Color | Secundario
+$color-prueba-sub: #72baf2;
+
+// Color | Star
+$color-star: #fac937;
+
+// Background | Buttons
+$back-button: #f9f9fb;
+
+// Fuente
+$roboto: 'Roboto', sans-serif;
+$roboto-slab: 'Roboto Slab', sans-serif;
+
+// Tamaños
+$gap: 1rem;
+$gap-slider: 40px;
+$gap-slider-s: $gap-slider * 0.5;
+$gap-slider-xs: $gap-slider * 0.25;
+$gap-slider-xxs: $gap-slider * 0.125;
+$grid-wrapped: 400px;
+$size-burguer: 5rem;
+$size-burguer-mobile: 5.5rem;
+$font-icons: 1em;
+
+// Color | Principal
+$color-main: $color-prueba;
+$color-main-darker: darken($color-main, 20%);
+$color-main-dark: darken($color-main, 10%);
+$color-main-light: lighten($color-main, 10%);
+$color-main-lighter: lighten($color-main, 20%);
+
+// Color | Secundario
+$color-main-sub: $color-prueba-sub;
+$color-main-sub-darker: darken($color-main-sub, 20%);
+$color-main-sub-dark: darken($color-main-sub, 10%);
+$color-main-sub-light: lighten($color-main-sub, 10%);
+$color-main-sub-lighter: lighten($color-main-sub, 20%);
+
+// Color | Blanco
+$color-light: #fff;
+
+// Color | Negro
+$color-dark: #000;
+$color-dark-light: lighten($color-dark, 15%);
+
+// Colores | Grises
+$color-grey: #cccccc;
+$color-grey-darker: darken($color-grey, 20%);
+$color-grey-dark: darken($color-grey, 10%);
+$color-grey-light: lighten($color-grey, 10%);
+$color-grey-lighter: lighten($color-grey, 20%);
+$color-grey-lightest: lighten($color-grey, 22%);
+
+// Colores | Verdes
+$color-green: #8bb52b;
+$color-green-darker: darken($color-green, 20%);
+$color-green-dark: darken($color-green, 10%);
+$color-green-light: lighten($color-green, 10%);
+$color-green-lighter: lighten($color-green, 20%);
+$color-green-lightest: lighten($color-green, 22%);
+
+// Transición
+$transition-style: 0.3s ease-in-out;
+$transition-all: all $transition-style;
+$transition-opacity: opacity $transition-style;
+$transition-color: color $transition-style, background-color $transition-style, border-color $transition-style;
+$transition-link: $transition-color;
+$transition: $transition-all;

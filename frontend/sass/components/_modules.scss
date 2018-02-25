@@ -1,0 +1,23 @@
+// Módulos
+.module{
+	text-align: center;
+
+	// Contenedor
+	header{
+		margin-bottom: 2em;
+
+		// Márgenes | No párrafos
+		> *:not(p){
+			margin: 0;
+		}
+
+		h3 {
+			font-family: $roboto;
+		}
+
+		// Márgenes | Párrafos
+		p{
+			margin: 0.5em 0;
+		}
+	}
+}

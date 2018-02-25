@@ -1,0 +1,33 @@
+// Easy to configure grids
+@mixin grid($columns: 2, $gutter: 2){
+
+	// Setting
+	$gutter-porcentual: $gutter * 0.5%;
+	$gutter-columns: $columns - 1;
+	$width: (100% - ($gutter-porcentual * $gutter-columns)) / $columns;
+
+	// Styles
+	display: block;
+	font-size: 0;
+	> *{
+		@include box-sizing(border-box);
+		display: inline-block;
+		font-size: 1rem;
+		margin-right: $gutter-porcentual;
+		margin-bottom: $gutter-porcentual;
+		vertical-align: top;
+		width: 100%;
+		max-width: $width;
+
+		// Right column
+		&:nth-child(#{$columns}n),
+		&:last-child{
+			margin-right: 0;
+		}
+
+		// All rows except the last one
+		&:nth-last-child(n+#{$columns + 1}){
+			margin-bottom: $gutter-porcentual;
+		}
+	}
+}

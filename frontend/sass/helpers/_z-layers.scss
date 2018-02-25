@@ -1,0 +1,40 @@
+// Variables
+$z-layers: (
+	"loader":         1000,
+	"modal": (
+		"base":         100,
+		"button":       150
+	),
+	"default": (
+		"hide":          -2,
+		"base":           1,
+		"menu":           5
+	),
+	"below":             -1,
+	"bottomless-pit": -9000
+);
+
+// Map deep get
+@function map-deep-get($map, $keys...) {
+	@each $key in $keys {
+		$map: map-get($map, $key);
+	}
+
+	@return $map;
+}
+
+// Función
+@function z($keys...){
+	$index: map-deep-get($z-layers, $keys...);
+
+	@if type-of($index) == map { 
+		// Attempt to look up default key on $index (map)
+		// If not found we get null rather than an error
+		// and can fallback to a global default (below) 
+		$index: map-deep-get($index, default); 
+	}
+
+	$index: 1 !default; 
+
+	@return $index;
+}

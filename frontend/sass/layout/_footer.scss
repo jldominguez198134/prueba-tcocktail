@@ -1,0 +1,235 @@
+body > footer{
+	// Variables
+	$gap: 1.1em;
+	$gap2: 20px;
+
+	// Estilos
+	color: $color-light;
+	background: $color-dark;
+	padding-top: $gap;
+	padding-bottom: $gap2;
+
+	@include responsive('max-boxes') {
+		padding: 0;
+		margin: 0;
+	}
+
+	.footer{
+		width: 100%;
+		border-radius: 10px;
+		min-height: 32px;
+		margin: 20px auto;
+		position: relative;
+		@include flex-wrap(wrap);
+
+		@include responsive('max-boxes') {
+			padding: 0;
+			margin: 0;
+			display: block !important;
+		}
+		@include responsive('max-phone') {
+			display: block;
+		}
+
+		ul {
+			$size: 100%;
+			display: inline-block;
+
+			@include responsive('max-boxes') {
+				display: block;
+				text-align: left;
+				padding: 20px 0;
+				margin: 0;
+				font-size: 1rem;
+				letter-spacing: 1px;
+				-webkit-box-flex: 0 !important;
+				-moz-box-flex: 0 !important;
+				-webkit-flex: 0 !important;
+				-ms-flex: 0 !important;
+				flex: 0 !important;
+			}
+			@include responsive('max-phone') {
+				margin: 0 !important;
+				padding: 9px 0;
+			}
+
+			&:first-child {
+				@include responsive('max-boxes') {
+					background: #8b8683;
+					text-align: left;
+				}
+				li:first-child {
+					margin-left: 20px;
+					margin-right: 1.2em !important;
+					font-weight: bold;
+					font-size: 1.2rem;
+					margin-top: 4px;
+
+					@include responsive('max-phone') {
+						font-size: 2rem;
+						margin-right: 0 !important;
+						display: inline-block;
+						margin-left: 20px;
+					}
+				}
+				&.social {
+					min-height: $size;
+				}
+				&:not(:first-child) {
+					padding-right: $gap;
+					padding-left: $gap;
+					@include responsive('max-boxes') {
+						/*border-bottom: 1px solid $color-grey-dark;*/
+						margin-right: 0;
+						border-right: none;
+						border-bottom: 2px solid $color-light;
+					}
+				}
+			}
+
+			&:nth-child(2) {
+				text-align: center;
+				/*width: 80%;*/
+
+				li {
+					margin-right: 40px;
+
+					&:first-child {
+						font-size: 1.1rem;
+					}
+				}
+			}
+
+			&:last-child {
+				text-align: right;
+			}
+
+			li {
+				vertical-align: middle;
+				font-size: 1rem;
+				margin-top: 15px;
+				display: inline-block;
+				font-family: $roboto;
+
+				a {
+					color: $color-light;
+					text-decoration: none;
+					/*@include responsive('max-phone') {
+						font-weight: bold;
+					}*/
+					&:hover {
+						color: $color-grey-light;
+					}
+				}
+
+				// Redes sociales
+				&.social {
+					font-family: $font-icons;
+
+					@include responsive('max-boxes') {
+						margin: 0 0 0 40px !important;
+					}
+					a {
+						$size: 2em;
+						color: #8b8683;
+						background-color: $color-light;
+						@include border-radius($size / 2);
+						display: inline-block;
+						height: $size;
+						line-height: $size * 1.05;
+						width: $size;
+						text-align: center;
+
+						&.fa {
+							@include responsive('max-phablet') {
+								font-size: 1.5rem;
+							}
+						}
+
+						&:first-child {
+							margin: 0 !important;
+						}
+
+						&.fa:nth-child(2) {
+							margin: 0 8px !important;
+						}
+
+						&.fa-facebook:hover {
+							background-color: $color-facebook;
+							color: $color-light;
+						}
+						&.fa-youtube:hover {
+							background-color: $color-youtube;
+							color: $color-light;
+						}
+						&.fa-twitter:hover {
+							background-color: $color-twitter;
+							color: $color-light;
+						}
+						&.fa-instagram:hover {
+							background-color: $color-instagram;
+							color: $color-light;
+						}
+						&:not(:last-child) {
+							$margin: 0.5em;
+							margin-right: $margin;
+							@include responsive('max-tablet') {
+								margin-right: $margin * 2;
+							}
+						}
+						&:nth-child(2) {
+							margin-right: 0.3em;
+						}
+						& {
+							/*@include responsive('max-phone') {
+								margin: 10px !important;
+							}*/
+						}
+					}
+				}
+			}
+			&:last-child {
+				@include responsive('max-boxes') {
+					padding-top: 5px;
+				}
+				li {
+					@include responsive('max-boxes') {
+						text-align: left;
+						margin-left: 40px !important;
+
+						display: block;
+						margin-top: 5px;
+					}
+				}
+			}
+
+			@include responsive('max-boxes') {
+				& {
+					display: block;
+					width: 100% !important;
+					margin: 20px 0;
+
+					li {
+						text-align: center;
+						margin-right: 40px !important;
+						margin-left: 40px;
+					}
+				}
+			}
+			@include responsive('max-phone') {
+				& {
+					li {
+						margin: 5px auto !important;
+						display: block;
+					}
+				}
+			}
+		}
+	}
+
+	// Eliminados márgenes de container en Pie de página
+	/*.container{
+		margin-bottom: 20px;
+		margin-top: 100px;
+	}*/
+}

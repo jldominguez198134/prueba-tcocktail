@@ -1,0 +1,39 @@
+.form{
+
+	// Tamaño
+	$size: 3em;
+	$pad: 1em;
+
+	input[type='text'],
+	input[type='number']{
+		@include box-sizing(border-box);
+		border: 1px solid $color-grey-light;
+		padding-left: $pad;
+		padding-right: $pad;
+		position: relative;
+		top: -1px;
+		outline: 0;
+		transition: $transition-color;
+		&:focus{
+			border-color: $color-main;
+			background-color: $color-grey-lighter;
+		}
+		&.valid{
+			border-color: $flat-green-1;
+		}
+		&.not-valid{
+			border-color: $flat-red-1;
+		}
+		&.not-response{
+			border-color: $flat-blue-1;
+		}
+	}
+	.btn,
+	input[type='text']{
+		height: $size;
+	}
+	.btn{
+		width: $size;
+	}
+
+}

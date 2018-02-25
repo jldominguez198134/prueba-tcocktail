@@ -1,0 +1,46 @@
+.content-and-image{
+	$break: 'tablet';
+	margin-right: 50%;
+	position: relative;
+
+	// Imagen
+	&::after{
+		background: no-repeat center;
+		background-size: cover;
+		content: '';
+		height: 100%;
+		position: absolute;
+		right: -100%;
+		top: 0;
+		width: 100%;
+	}
+
+	// Botón
+	.btn{
+		margin-top: 1em;
+	}
+
+	// Tamaño del icono
+	figure{
+		$size: 7em;
+		background: center no-repeat;
+		background-size: contain;
+		display: inline-block;
+		height: $size;
+		width: $size;
+	}
+
+	// Break
+	@include responsive('max-#{$break}'){
+		$size: 25rem;
+		margin-right: 0;
+		margin-top: $size + 1rem;
+
+		// Imagen
+		&::after{
+			right: 0;
+			height: $size;
+			top: -$size;
+		}
+	}
+}

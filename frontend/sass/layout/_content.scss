@@ -1,0 +1,15 @@
+// Contenido principal
+main{
+	/*overflow: auto;*/ // Expandir tamaño de capa incluyendo márgenes de hijos
+
+	// Secciones | Separación entre secciones
+	> section{
+		$pad: 2rem;
+		margin-bottom: $pad;
+		margin-top: $pad;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}

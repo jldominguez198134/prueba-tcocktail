@@ -1,0 +1,16 @@
+extends templates/_page
+
+//- Página actual
+block page
+	- var page = page_class.tab1
+
+//- Contenido
+block content
+
+	//- Módulo | Tab 1
+	section
+		include modules/_portada-tab1
+
+	//- Módulo | Tab 1
+	section
+		include modules/_portada-tab2

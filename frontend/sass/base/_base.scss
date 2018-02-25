@@ -1,0 +1,55 @@
+// Estilos genéricos
+html,
+body {
+	@include responsive('max-phablet') {
+		overflow-x: hidden;
+	}
+}
+html{
+	@include text('text');
+}
+body,
+button,
+input,
+select,
+textarea{
+	font-family: $roboto;
+}
+ol,
+ul{
+	padding: 0;
+	margin: 0;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+img{
+	max-width: 100%;
+}
+button{
+	background: none;
+	border: 0;
+	padding: 0;
+	&:focus{
+		outline: 0;
+	}
+}
+h1{
+	font-size: 3em;
+
+	@include responsive('max-desktop'){
+		font-size: 2.5em;
+	}
+
+	@include responsive('max-phone'){
+		font-size: 2.25em;
+	}
+}
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}

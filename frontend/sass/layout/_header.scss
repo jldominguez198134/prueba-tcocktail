@@ -1,0 +1,99 @@
+// Cabecera
+.header{
+	width: 100%;
+	margin: 0 auto;
+
+	@include responsive('max-miniphablet') {
+		margin: 0;
+		max-width: 100%;
+		padding: 0;
+	}
+
+	// Centrado vertical
+	.container{
+		box-shadow: 0 0 2px 1px rgba(0,0,0,.2);
+		position: relative;
+		background-color: $color-light;
+		@extend %center-v;
+		margin: 0 auto;
+		min-height: 45px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		padding: 0 24px;
+
+		@include responsive('max-miniphablet') {
+			padding: 0;
+			margin: 0;
+			max-width: 100%;
+
+			> * {
+				display: block;
+			}
+		}
+
+
+		// Opción principal | < Break Menú Móvil
+		@include responsive('min-#{$break-menu-mobile}'){
+			// Ajustar celdas a contenido (excepto celda de menú)
+			> *:not(nav){
+				width: 1%;
+				white-space: nowrap;
+			}
+			nav{
+				width: 4%!important;
+                text-align: center;
+			}
+		}
+
+			@include responsive('max-desktop') {
+				nav{
+				width: 7%!important;
+				}
+			}
+
+
+
+	}
+    .title{
+      width: 100%;
+      text-align: center;
+    }
+	// Título
+	h1{
+		@include text('title');
+		padding: 0.0em;
+		padding-left: 0;
+		font-family: $roboto;
+		@include box-sizing(border-box);
+		margin: 0;
+
+		@include responsive('max-phablet') {
+          font-size: 1.7rem;
+		}
+		@include responsive('max-phone') {
+			font-size: 1.5rem;
+		}
+
+		a {
+			&:hover {
+				color: $color-dark;
+			}
+		}
+	}
+}
+
+// Espacio para cabecera
+/*body{
+	padding-top: $size-burguer;
+	display: block;
+}*/
+
+// Excepciones de container en cabecera
+header .container{
+	@include responsive('max-#{$break-menu-mobile}'){
+		margin-bottom: 0;
+		margin-top: 0;
+		padding-left: 2px;
+	}
+}

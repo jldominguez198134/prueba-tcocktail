@@ -1,0 +1,36 @@
+// Variables
+$context: 16;
+$font-sizes: 'title' 32 28 24,
+			 'subtitle' 20 18 16,
+			 'text' 16 15 14;
+
+// Mixin Font-face
+@mixin font-size($sizeValue: $context ){
+	font-size: $sizeValue + px; //fallback for old browsers
+	font-size: ((1 / $context) * $sizeValue) + rem;
+}
+
+// Mixin Font-texto
+@mixin text($size, $list: $font-sizes){
+
+	@each $type in $list{
+
+		// Variables
+		$name: nth($type, 1);
+		$desktop: nth($type, 2);
+		$tablet: nth($type, 3);
+		$phone: nth($type, 4);
+
+		@if ($name == $size){
+
+			@include font-size($desktop);
+
+			@include responsive('max-tablet'){
+				@include font-size($tablet);
+			}
+			@include responsive('max-phone'){
+				@include font-size($phone);
+			}
+		}
+	}
+}

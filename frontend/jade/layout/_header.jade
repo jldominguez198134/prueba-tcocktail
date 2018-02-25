@@ -1,0 +1,22 @@
+//- Cabecera
+.header.container.module
+
+	//- Contenedor
+	.container.xs
+
+		//- Botón de menú Hamburguesa
+		.burguer
+			button
+				i.fa.fa-bars(aria-hidden='true')
+
+		//- Menú
+
+		nav.menu
+			.menu-main
+				.menu-title
+					h2 Menú
+				//- Menú principal
+				ul.menu-options
+					each option in menu
+						li(class=typeof option.class === "undefined" ? "" : option.class)
+							button #{option.text}

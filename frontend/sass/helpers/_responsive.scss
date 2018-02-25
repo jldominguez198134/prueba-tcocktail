@@ -1,0 +1,57 @@
+// Responsive control mixin
+@mixin responsive($media) {
+
+	// Variables
+	$breaks:
+		'max-desktop' 'min-desktop' $break-desktop,
+		'max-tablet' 'min-tablet' $break-tablet,
+		'max-boxes' 'min-boxes' $break-boxes,
+		'max-phablet' 'min-phablet' $break-phablet,
+		'max-midphablet' 'min-midphablet' $break-midphablet,
+		'max-miniphablet' 'min-miniphablet' $break-miniphablet,
+		'max-phone' 'min-phone' $break-phone,
+		'max-midphone' 'min-midphone' $break-midphone,
+		'max-miniphone' 'min-miniphone' $break-miniphone;
+
+	$interval-breaks:
+		'desktop-tablet' $break-desktop $break-tablet,
+		'tablet-phablet' $break-tablet $break-phablet,
+		'phablet-phone' $break-phablet $break-phone,
+		'desktop-phablet' $break-desktop $break-phablet,
+		'tablet-phone' $break-tablet $break-phone,
+		'desktop-phone' $break-desktop $break-phone;
+
+	// Max & min medias
+	@each $break in $breaks {
+
+		$max: nth($break, 1);
+		$min: nth($break, 2);
+		$value: nth($break, 3);
+
+		@if $media == $max {
+			@media only all and (max-width: $value) {
+				@content;
+			}
+		}
+
+		@if $media == $min {
+			@media only all and (min-width: $value) {
+				@content;
+			}
+		}
+	}
+
+	// Interval medias
+	@each $interval in $interval-breaks {
+
+		$name: nth($interval, 1);
+		$max-value: nth($interval, 2);
+		$min-value: nth($interval, 3);
+
+		@if $media == $name {
+			@media only all and (max-width: $max-value) and (min-width: $min-value) {
+				@content;
+			}
+		}
+	}
+}
