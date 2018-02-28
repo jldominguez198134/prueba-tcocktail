@@ -2046,8 +2046,24 @@ html.tab2 {
 }
 
 .m-portada-tab2 > .container > .mas-info > [class*="tab2-"] {
+  position: relative;
   margin: 0 auto;
   border: 1px solid #003970;
+}
+
+.m-portada-tab2 > .container > .mas-info > [class*="tab2-"] .exclusivo {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  background: red;
+  color: #fff;
+}
+
+.m-portada-tab2 > .container > .mas-info > [class*="tab2-"] .exclusivo p {
+  margin: 0;
+  padding: 5px 10px;
+  font-size: 0.7rem;
+  letter-spacing: 1.3px;
 }
 
 @media only all and (max-width: 768px) {

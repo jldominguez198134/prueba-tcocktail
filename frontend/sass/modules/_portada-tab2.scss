@@ -91,8 +91,24 @@ html.tab2 {
     > .mas-info {
 
       > [class*="tab2-"] {
+        position: relative;
         margin: 0 auto;
         border: 1px solid $color-main;
+
+        .exclusivo {
+          position: absolute;
+          top: -1px;
+          right: -1px;
+          background: red;
+          color: $color-light;
+
+          p {
+            margin: 0;
+            padding: 5px 10px;
+            font-size: 0.7rem;
+            letter-spacing: 1.3px;
+          }
+        }
 
         .flex-container {
           @include responsive('max-phablet') {
